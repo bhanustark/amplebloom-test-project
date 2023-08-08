@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import { useColorScheme } from 'react-native';
 
 import HomeScreen from './screens/HomeScreen';
+import BottomMenu from './screens/BottomMenu';
 import SignupScreen from './screens/SignupScreen';
 import LoginScreen from './screens/LoginScreen';
 import LoggedInScreen from "./screens/LoggedInScreen";
@@ -21,6 +22,7 @@ function App() {
     <Provider store={store}>
       <NavigationContainer theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack.Navigator>
+          <Stack.Screen name="Main" component={BottomMenu} options={{headerShown: false}} />
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Signup" component={SignupScreen} />
           <Stack.Screen name="Login" component={LoginScreen} />
