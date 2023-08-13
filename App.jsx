@@ -11,6 +11,7 @@ import BottomMenu from './screens/BottomMenu';
 import SignupScreen from './screens/SignupScreen';
 import LoginScreen from './screens/LoginScreen';
 import LoggedInScreen from "./screens/LoggedInScreen";
+import IntroScreen from './screens/IntroScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,8 +23,9 @@ function App() {
     <Provider store={store}>
       <NavigationContainer theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack.Navigator>
+          <Stack.Screen name="Intro" component={IntroScreen} options={{headerShown: false}} />
           <Stack.Screen name="Main" component={BottomMenu} options={{headerShown: false}} />
-          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false}} />
           <Stack.Screen name="Signup" component={SignupScreen} />
           <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="LoggedIn" component={LoggedInScreen} />
